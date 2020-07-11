@@ -24,39 +24,40 @@
 		}
 
 
-.nav ul {
+.nav{
+	 background-color: #333;
+}
+/*.nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
 }
-
-.nav li {
+*/
+/*.nav li {
   float: left;
-}
+}*/
 
-.nav li a {
-  display: block;
+.nav a {
+  display: inline-flex;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   transition: 0.5s;
-  width: 140px;
+  width: 12%;
   cursor: pointer;
 }
 
-.nav li a:not(.active){
+.nav a:not(.active){
 background-color: #333;
 }
 
 
-.nav li a:hover:not(.active) {
+.nav a:hover:not(.active) {
   background-color: #111;
-  width: 160px;
-  
-  
+  width: 14%;
 }
 
 .active {
@@ -119,7 +120,8 @@ background-color: #333;
 	height: 40px;
 	border-radius: 17px;
 	border-color: #8080803b;
-	margin-left: 7%;
+	margin-left: 5%;
+	margin-bottom: 2%;
 
 }
 .model input[type="submit"]{
@@ -276,15 +278,12 @@ th h2{
 	<br>
 
 	<div class="nav">
-		<ul>
-
-  			<li><a onclick="medicine();">Medicine</a></li>
-  			<li><a onclick="article();">Articles</a></li>
-  			<li><a onclick="disease();">Disease</a></li>
-  			<li><a onclick="questions();">Question</a></li>
-  			<li><a onclick="ShowAll();">ShowAllData</a></li>
-  			<li style="float:right"><a class="active" onclick="mesg();">Messages</a></li>
-		</ul>
+			<a  onclick="medicine();">Medicine</a>
+  			<a  onclick="article();">Articles</a>
+  			<a  onclick="disease();">Disease</a>
+  			<a  onclick="questions();">Question</a>
+  			<a  onclick="ShowAll();">ShowAllData</a></li>
+  			<a style="float:right" class="active" onclick="mesg();">Messages</a>
 	</div>
 </header>
 
@@ -319,7 +318,10 @@ th h2{
 		<form>
 			<h1>Delete/Load Medicine</h1>
 			<label>Enter Id of Medicine To be deleted or To be loaded to Update Data</label>
+			<br>
+			<br>
 			<input type="text" name="" placeholder="Medicine ID">
+			<br>
 			<input type="submit" name="" value="Delete">
 			<input type="submit" name="" value="LoadToUpdate">
 		</form>
@@ -391,7 +393,10 @@ th h2{
 		<form>
 			<h1>Delete/Load Article</h1>
 			<label>Enter Id of Article To be deleted or To be loaded to Update Data</label>
+			<br>
+			<br>
 			<input type="text" name="" placeholder="Article ID">
+			<br>
 			<input type="submit" name="" value="Delete">
 			<input type="submit" name="" value="LoadToUpdate">
 		</form>
@@ -486,7 +491,10 @@ th h2{
 		<form>
 			<h1>Delete/Load Question</h1>
 			<label>Enter Id of Question To be deleted or To be loaded to Update Data</label>
+			<br>
+			<br>
 			<input type="text" name="" placeholder="Article ID">
+			<br>
 			<input type="submit" name="" value="Delete">
 			<input type="submit" name="" value="LoadToUpdate">
 		</form>
@@ -528,6 +536,7 @@ th h2{
 		<div class="del">
 			<form class="delForm">
 			<input id="box" type="text" name="" placeholder="Input ID">
+			<br>
 			<button>Delete</button>
 			<button>LoadToUpdate</button>
 			</form>
@@ -536,7 +545,7 @@ th h2{
 		
 
 		<div class="dizez">
-
+<hr>
 			<form class="detail">
 
 				<label for="fname">Disease Name</label><br>

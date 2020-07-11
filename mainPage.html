@@ -38,39 +38,40 @@
 .body{
 	margin-bottom: 44px;
 }
-.nav ul {
+.nav{
+	 background-color: #333;
+}
+/*.nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
 }
-
-.nav li {
+*/
+/*.nav li {
   float: left;
-}
+}*/
 
-.nav li a {
-  display: block;
+.nav a {
+  display: inline-flex;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   transition: 0.5s;
-  width: 140px;
+  width: 12%;
   cursor: pointer;
 }
 
-.nav li a:not(.active){
+.nav a:not(.active){
 background-color: #333;
 }
 
 
-.nav li a:hover:not(.active) {
+.nav a:hover:not(.active) {
   background-color: #111;
-  width: 160px;
-  
-  
+  width: 14%;
 }
 
 .active {
@@ -328,15 +329,14 @@ tr:nth-child(odd) {
 	<br>
 
 	<div class="nav">
-		<ul>
+		
 
-  			<li><a  onclick="newMed();">New Launched</a></li>
-  			<li><a  onclick="article();">Read Articles</a></li>
-  			<li><a  onclick="comp();">Compare Medicines</a></li>
-  			<li><a  onclick="trendingDidease();">Trending Diseases</a></li>
-  			<li><a  onclick="GGuide()">Guide</a></li>
-  			<li style="float:right"><a class="active" href="mainPage.html">Home</a></li>
-		</ul>
+  			<a  onclick="newMed();">New Launched</a>
+  			<a  onclick="article();">Read Articles</a>
+  			<a  onclick="comp();">Compare Medicines</a>
+  			<a  onclick="trendingDidease();">Trending Diseases</a>
+  			<a  onclick="GGuide()">Guide</a></li>
+  			<a style="float:right" class="active" href="mainPage.html">Home</a>
 	</div>
 </header>
 
