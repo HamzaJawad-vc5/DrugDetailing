@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Admin Page
+	</title>
+	<link rel="stylesheet" href="dizezAdminPanel.css">
+	<style type="text/css">
+		*{
+			background-color: #e7f3f5;
+		}
+		#headr{
+			display:inline-block;
+			width: 100%
+		}
+		#headName{
+			 display: inline-flex;
+			width: 50%;
+
+		}
+		#headDetails{
+			 
+			float: right;
+		}
+
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.5s;
+  width: 140px;
+  cursor: pointer;
+}
+
+.nav li a:not(.active){
+background-color: #333;
+}
+
+
+.nav li a:hover:not(.active) {
+  background-color: #111;
+  width: 160px;
+  
+  
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.heading{
+	font-weight: 600px;
+	text-align: center;
+	padding: 2%;
+}
+
+.btnOut{
+			display: block;
+			margin-bottom: 10px;
+			color: #fffde7;
+			width: 120px;
+			height: 30px;
+			border-radius: 10px;
+			background: #356b6b; 
+		}
+
+/*body*/
+.body{
+
+	width: 100%;
+	height: 100%;
+
+
+}
+
+.homepage{
+	padding-top:3%;
+	padding-bottom: 3%;
+	width: 50%;
+	margin: auto;
+}
+.homepage h1{
+	margin-top: 15%;
+
+}
+.homepage p{
+	margin-left: 10%;
+}
+
+/*medicine section*/
+
+.medicine{
+	display: none;
+}
+.inside_medicine{
+	padding-top:3%;
+	width: 75%;
+	margin: auto;
+}
+
+
+.model input[type="text"]{
+	width: 500px;
+	height: 40px;
+	border-radius: 17px;
+	border-color: #8080803b;
+	margin-left: 7%;
+
+}
+.model input[type="submit"]{
+	width: 100px;
+	height: 40px;
+	border-radius: 17px;
+	border-color: #295469d6;
+
+}
+
+.add{
+	margin-top: 2%;
+	margin-left: 40%;
+}
+
+
+/*article section*/
+
+.article{
+	display: none;
+}
+.inside_article{
+	padding-top:3%;
+	width: 78%;
+	margin: auto;
+}
+.questt{
+	display: none;
+}
+
+#mainMsg{
+ display: none;
+}
+.insideMsg{
+	margin: 5% 10% 1% 10%;
+
+}
+.bodyMsg{
+	border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 5px 3px 0px;
+  margin-bottom: 2%;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout:fixed;
+}
+
+td, th {
+  background-color: transparent;
+  border: 2px solid grey;
+  word-wrap: break-word;
+  max-width: 100px auto;
+  /*text-align: left;
+  padding: 8px;*/
+}
+
+
+
+th{
+	
+	background-color: #546e7a;
+}
+th h2{
+	background-color: transparent;	
+}
+
+.mainFaqsShow{display: none;}
+.mainUserShow{display: none;}
+.mainMsgShow{display: none;}
+.mainDisShow{display: none;}
+.mainArtShow{display: none;}
+.mainMedShow{display: none;}
+
+#ShowAll{
+	display: none;
+}
+.ShowBtn{
+			
+			margin-bottom: 10px;
+			color: #fffde7;
+			width: 120px;
+			height: 50px;
+			border-radius: 30px;
+			background: #009688;
+			cursor: pointer;
+}
+
+
+/* The Modal (background) */
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+</style>
+</head>
+<body>
+<header>
+	<div id="headr">
+
+   
+	<div id="headName" onclick="location.href='';" style="cursor: pointer;">
+	<img src="newDrug4.png" width="11%" height="11%" style="margin : .5%">
+	<h1>Drug Detailing</h1>
+	</div>		
+	
+	<div id="headDetails">	
+	<h3>Hey Admin!</h3>
+	<a href="index.html"><button class="btnOut" >Logout</button></a>
+	</div>
+
+	</div>
+
+	<br>
+
+	<div class="nav">
+		<ul>
+
+  			<li><a onclick="medicine();">Medicine</a></li>
+  			<li><a onclick="article();">Articles</a></li>
+  			<li><a onclick="disease();">Disease</a></li>
+  			<li><a onclick="questions();">Question</a></li>
+  			<li><a onclick="ShowAll();">ShowAllData</a></li>
+  			<li style="float:right"><a class="active" onclick="mesg();">Messages</a></li>
+		</ul>
+	</div>
+</header>
+
+
+
+
+<div class="body" id="body">
+	<div class="homepage">
+		<h1>Welcome To the Admin Page</h1>
+		<p>-Admin page let you Delete Medicine Information</p>
+		<p>-Admin page let you Add new Medicine Information</p>
+		<p>-Admin page let you Delete Articles</p>
+		<p>-Admin page let you Add new Articles</p>
+		<p>-Admin page let you Delete Disease Information</p>
+		<p>-Admin page let you Add new Disease Information</p>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+<div class="medicine" id="medicine">
+
+	<div class="inside_medicine">
+
+	<div class="model"> 
+		
+		<form>
+			<h1>Delete/Load Medicine</h1>
+			<label>Enter Id of Medicine To be deleted or To be loaded to Update Data</label>
+			<input type="text" name="" placeholder="Medicine ID">
+			<input type="submit" name="" value="Delete">
+			<input type="submit" name="" value="LoadToUpdate">
+		</form>
+
+	 </div>
+
+	 <hr>
+
+	 <div class="model"> 
+		
+		<form>
+			<h1>Add/Update Medicine</h1>
+			<h4>Enter Name of Medicine To be Added</h4>
+			<input type="text" name="" placeholder="Medicine Name">
+			<br>
+			<h4>Enter Drug Class</h4>
+			<input type="text" name="" placeholder="Drug Class">
+			<br>
+			<h4>Enter Side Effects</h4>
+			<textarea rows="7" cols="50" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+			<h4>Enter Price of Medicine To be Added</h4>
+			<input type="text" name="" placeholder="Medicine Name">
+			<br>
+			<h4>Enter Dosage of Drug </h4>
+			<input type="text" name="" placeholder="Drug Class">
+			<br>
+
+			<h4>Enter Quantity of Medicine in one pack</h4>
+			<input type="text" name="" placeholder="Medicine Name">
+			<br>
+			<h4>Enter Brands of Drug </h4>
+			<input type="text" name="" placeholder="Drug Class">
+			<br>
+
+			<h4>Enter Half life of Drug</h4>
+			<input type="text" name="" placeholder="Medicine Name">
+			<br>
+			<h4>Enter First Approval Date of Drug </h4>
+			<input type="text" name="" placeholder="Drug Class">
+			<br>
+
+			<h4>Enter Description about Drug </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<label>Select image to be uploaded </label>
+				<input type="file" id="img" name="img" accept="image/*">
+			<br>
+
+			<input class="add" type="submit" name="" value="ADD">
+			<input class="add" type="submit" name="" value="Update">
+		</form>
+
+	 </div>
+
+	 </div>
+
+</div>
+
+
+<div class="article" id="article">
+	
+	<div class="inside_article">
+	<div class="model"> 
+		
+		<form>
+			<h1>Delete/Load Article</h1>
+			<label>Enter Id of Article To be deleted or To be loaded to Update Data</label>
+			<input type="text" name="" placeholder="Article ID">
+			<input type="submit" name="" value="Delete">
+			<input type="submit" name="" value="LoadToUpdate">
+		</form>
+
+	 </div>
+
+	 <hr>
+
+	 <div class="model"> 
+		
+		<form>
+			<h1>Add/Update Article</h1>
+			<h4>Enter Heading of Article To be Added</h4>
+			<input type="text" name="" placeholder="Article Heading">
+			<br>
+			<h4>Enter Date of Publish</h4>
+			<input type="text" name="" placeholder="Date">
+			<br>
+			<h4>Enter Name of Publishers</h4>
+			<input type="text" name="" placeholder="Publishers Names">
+			<br>
+			<h4>Enter Source of Information</h4>
+			<input type="text" name="" placeholder="Sources">
+			<br>
+
+			<h4>Enter nnumber of Articles Published by Publisher(s)</h4>
+			<input type="text" name="" placeholder="Number of Articles">
+			<br>
+			
+
+			<h4>Abstract </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4>Background</h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4>Introduction </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4>Body </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4> Discussion </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4>Conclusion </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4>Recommendations </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<h4>Appendices </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+			<label>Select image to be uploaded </label>
+				<input type="file" id="img" name="img" accept="image/*">
+			<br>
+
+			<input class="add" type="submit" name="" value="Publish">
+			<input class="add" type="submit" name="" value="Update">
+		</form>
+
+	 </div>
+
+	 </div>
+
+</div>
+
+
+
+<div class="questt" id="questt">
+	
+	<div class="inside_article">
+	<div class="model"> 
+		
+		<form>
+			<h1>Delete/Load Question</h1>
+			<label>Enter Id of Question To be deleted or To be loaded to Update Data</label>
+			<input type="text" name="" placeholder="Article ID">
+			<input type="submit" name="" value="Delete">
+			<input type="submit" name="" value="LoadToUpdate">
+		</form>
+
+	 </div>
+
+	 <hr>
+
+	 <div class="model"> 
+		
+		<form>
+			<h1>Add/Update Question</h1>
+			<h4>Enter Question for FAQs To be Added</h4>
+			<input type="text" name="" placeholder="Article Heading">
+			<br>
+			
+
+			<h4>Enter given Answer </h4>
+			<textarea rows="8" cols="80" name="comment" form="usrform">
+				Enter text here...</textarea>
+			<br>
+
+
+			<input class="add" type="submit" name="" value="Add">
+			<input class="add" type="submit" name="" value="Update">
+		</form>
+
+	 </div>
+
+	 </div>
+
+</div>
+
+
+
+<div id="mainDizez">
+
+
+		<div class="del">
+			<form class="delForm">
+			<input id="box" type="text" name="" placeholder="Input ID">
+			<button>Delete</button>
+			<button>LoadToUpdate</button>
+			</form>
+		</div>
+
+		
+
+		<div class="dizez">
+
+			<form class="detail">
+
+				<label for="fname">Disease Name</label><br>
+			    <textarea name="paragraph_text" cols="44" rows="5"></textarea>
+			    <label for="lname">Description</label><br>
+			    <textarea name="paragraph_text" cols="44" rows="5"></textarea>
+			    <label for="fname">Symtoms</label><br>
+			    <textarea name="paragraph_text" cols="44" rows="5"></textarea>
+			    <label for="lname">Precautions</label><br>
+			    <textarea name="paragraph_text" cols="44" rows="5"></textarea>
+			    <br>
+			    <button>Add</button>
+			    <button>Update</button>
+			</form>
+
+		</div>
+
+</div>
+
+
+
+<div id="mainMsg">
+	<h1 style="text-align: center;">Messages From Users</h1>
+	<div class="insideMsg">
+
+		<div class="bodyMsg">
+		<h3>e-Mail of Sender</h3>
+		<h4>Concerned With</h4>
+		<p>The actual message</p>
+		</div>
+		<hr>
+		
+		<div class="bodyMsg">
+		<h3>e-Mail of Sender</h3>
+		<h4>Concerned With</h4>
+		<p>The actual message</p>
+		</div>
+		<hr>
+
+	</div>
+</div>
+
+
+<div class="mainMedShow" id="mainMedShow">
+	<div class="insideMedShow">
+		<table >
+			<head>
+				<tr>
+					<th>
+						<h2>ID</h2>
+					</th>
+					<th>
+						<h2>Name</h2>
+					</th>
+					<th>
+						<h2>Rating</h2>
+					</th>
+					<th>
+						<h2>Class</h2>
+					</th>
+					<th>
+						<h2>Purpose</h2>
+					</th>
+					<th>
+						<h2>Side Effects</h2>
+					</th>
+					<th>
+						<h2>Price</h2>
+					</th>
+					<th>
+						<h2>Dosage</h2>
+					</th>
+					<th>
+						<h2>Formula</h2>
+					</th>
+					<th>
+						<h2>Quantity</h2>
+					</th>
+					<th>
+						<h2>Brands</h2>
+					</th>
+					<th>
+						<h2>Half Life</h2>
+					</th>
+					<th>
+						<h2>Aproval Date</h2>
+					</th>
+				</tr>
+			</head>
+
+			<tbody>
+				<tr>
+					<td>
+						<p>123</p>
+					</td>
+					<td>
+						<p>XYZ</p>
+					</td>
+					<td>
+						<p>Rating</p>
+					</td>
+					<td>
+						<p>Class</p>
+					</td>
+					<td>
+						<p>Purpose</p>
+					</td>
+					<td>
+						<p>Side Effects</p>
+					</td>
+					<td>
+						<p>Price</p>
+					</td>
+					<td>
+						<p>Dosage</p>
+					</td>
+					<td>
+						<p>Formula</p>
+					</td>
+					<td>
+						<p>Quantity</p>
+					</td>
+					<td>
+						<p>Brands</p>
+					</td>
+					<td>
+						<p>Half Life</p>
+					</td>
+					<td>
+						<p>Aproval Date</p>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="mainArtShow" id="mainArtShow">
+	<div class="insideArtShow">
+		<table >
+			<head>
+				<tr>
+					<th>
+						<h2>ID</h2>
+					</th>
+					<th>
+						<h2>Heading</h2>
+					</th>
+					<th>
+						<h2>Date</h2>
+					</th>
+					<th>
+						<h2>Publisher</h2>
+					</th>
+					<th>
+						<h2>Sources</h2>
+					</th>
+					<th>
+						<h2>T_Art_Published</h2>
+					</th>
+					<th>
+						<h2>Abstract</h2>
+					</th>
+					<th>
+						<h2>Background</h2>
+					</th>
+					<th>
+						<h2>Introduction</h2>
+					</th>
+					<th>
+						<h2>Body</h2>
+					</th>
+					<th>
+						<h2>Discussion</h2>
+					</th>
+					<th>
+						<h2>Conclusion</h2>
+					</th>
+					<th>
+						<h2>Recommendations</h2>
+					</th>
+					<th>
+						<h2>Appendices</h2>
+					</th>
+				</tr>
+			</head>
+
+			<tbody>
+				<tr>
+					<td>
+						<p>1234</p>
+					</td>
+					<td>
+						<p>Heading</p>
+					</td>
+					<td>
+						<p>Date</p>
+					</td>
+					<td>
+						<p>Publisher</p>
+					</td>
+					<td>
+						<p>Sources</p>
+					</td>
+					<td>
+						<p>T_Art_Published</p>
+					</td>
+					<td>
+						<p>Abstract</p>
+					</td>
+					<td>
+						<p>Background</p>
+					</td>
+					<td>
+						<p>Introduction</p>
+					</td>
+					<td>
+						<p>Body</p>
+					</td>
+					<td>
+						<p>Discussion</p>
+					</td>
+					<td>
+						<p>Conclusion</p>
+					</td>
+					<td>
+						<p>Recommendations</p>
+					</td>
+					<td>
+						<p>Appendices</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="mainDisShow" id="mainDisShow">
+	<div class="insideDisShow">
+		<table >
+			<head>
+				<tr>
+					<th>
+						<h2>ID</h2>
+					</th>
+					<th>
+						<h2>Name</h2>
+					</th>
+					<th>
+						<h2>Detail</h2>
+					</th>
+					<th>
+						<h2>Symptoms</h2>
+					</th>
+					<th>
+						<h2>Precautions</h2>
+					</th>
+				</tr>
+			</head>
+
+			<tbody>
+				<tr>
+					<td>
+						<p>1234</p>
+					</td>
+					<td>
+						<p>Name</p>
+					</td>
+					<td>
+						<p>Detail</p>
+					</td>
+					<td>
+						<p>Symptoms</p>
+					</td>
+					<td>
+						<p>Precautions</p>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="mainFaqsShow" >
+	<div class="insideFaqsShow">
+		<table >
+			<head>
+				<tr>
+					<th>
+						<h2>ID</h2>
+					</th>
+					<th>
+						<h2>Email</h2>
+					</th>
+					<th>
+						<h2>Question</h2>
+					</th>
+					<th>
+						<h2>Answer</h2>
+					</th>
+					<th>
+						<h2>Answered By</h2>
+					</th>
+				</tr>
+			</head>
+
+			<tbody>
+				<tr>
+					<td>
+						<p>1234</p>
+					</td>
+					<td>
+						<p>Hamzajawad.vc5@gmail.com</p>
+					</td>
+					<td>
+						<p>This is question</p>
+					</td>
+					<td>
+						<p>This is Answer</p>
+					</td>
+					<td>
+						<p>Answer by Bilu</p>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="mainUserShow" id="mainUserShow">
+	<div class="insideUserShow">
+		<table >
+			<head>
+				<tr>
+					<th>
+						<h2>ID</h2>
+					</th>
+					<th>
+						<h2>UserName</h2>
+					</th>
+					<th>
+						<h2>eMail</h2>
+					</th>
+					<th>
+						<h2>Password</h2>
+					</th>
+					<th>
+						<h2>Phone</h2>
+					</th>
+				</tr>
+			</head>
+
+			<tbody>
+				<tr>
+					<td>
+						<p>1234</p>
+					</td>
+					<td>
+						<p>Hamza</p>
+					</td>
+					<td>
+						<p>blablabla</p>
+					</td>
+					<td>
+						<p>nothing</p>
+					</td>
+					<td>
+						<p>03035514608</p>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="mainMsgShow" id="mainMsgShow">
+	<div class="insideMsgShow">
+		<table >
+			<head>
+				<tr>
+					<th>
+						<h2>ID</h2>
+					</th>
+					<th>
+						<h2>Email</h2>
+					</th>
+					<th>
+						<h2>ConcernedWith</h2>
+					</th>
+					<th>
+						<h2>Message</h2>
+					</th>
+					
+				</tr>
+			</head>
+
+			<tbody>
+				<tr>
+					<td>
+						<p>1234</p>
+					</td>
+					<td>
+						<p>123@help.com</p>
+					</td>
+					<td>
+						<p>Doctor</p>
+					</td>
+					<td>
+						<p>This is Message</p>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<div id="ShowAll">
+	<div style="width: 50%; margin: auto; padding-top: 6%;">
+		
+		<div style="display: inline-block; width: 50%;">
+		<h3>Check Data of Medicines</h3>
+		<button class="ShowBtn" onclick="ShowMedInfo();">Medicines</button>
+		<h3>Check Data of Articles</h3>
+		<button class="ShowBtn" onclick="ShowArtInfo();">Articles</button>
+		<h3>Check Data of Diseases</h3>
+		<button class="ShowBtn" onclick="ShowDisInfo();">Diseases</button>
+		</div>
+		
+		<div style="display: inline-block; width: 50%; float: right;">
+			<h3>Check Data of Users</h3>
+		<button class="ShowBtn" onclick="ShowUsrInfo();">Users</button>
+		<h3>Check Data of Messages</h3>
+		<button class="ShowBtn" onclick="ShowMsgInfo();">Messages</button>
+		<h3>Check Data of FAQs</h3>
+		<button class="ShowBtn" onclick="ShowFaqsInfo();">Faqs</button>
+		</div>
+
+	</div>
+</div>
+
+
+<div id="myModal" class="modal1">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="panel">
+    	
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+	
+
+function medicine(){
+	document.getElementById("body").innerHTML="";
+		document.getElementById("body").innerHTML+= document.getElementById("medicine").innerHTML;
+	}
+
+function article(){
+	document.getElementById("body").innerHTML="";
+		document.getElementById("body").innerHTML+= document.getElementById("article").innerHTML;
+	}
+
+function disease(){
+	document.getElementById("body").innerHTML="";
+		document.getElementById("body").innerHTML+= document.getElementById("mainDizez").innerHTML;
+	}
+function questions(){
+	document.getElementById("body").innerHTML="";
+		document.getElementById("body").innerHTML+= document.getElementById("questt").innerHTML;
+	}
+function mesg(){
+	document.getElementById("body").innerHTML="";
+		document.getElementById("body").innerHTML+= document.getElementById("mainMsg").innerHTML;
+	}
+
+function ShowAll(){
+	document.getElementById("body").innerHTML="";
+		document.getElementById("body").innerHTML+= document.getElementById("ShowAll").innerHTML;
+	}
+
+
+
+function modelPanel(){
+
+	var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+
+  modal.style.display = "block";
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}
+
+
+
+function ShowMedInfo(){
+	modelPanel();
+	document.getElementById("panel").innerHTML= document.getElementById("mainMedShow").innerHTML;
+}
+
+
+function ShowArtInfo(){
+	modelPanel();
+	document.getElementById("panel").innerHTML= document.getElementById("mainArtShow").innerHTML;
+}
+
+function ShowDisInfo(){
+	modelPanel();
+	document.getElementById("panel").innerHTML= document.getElementById("mainDisShow").innerHTML;
+}
+
+function ShowUsrInfo(){
+	modelPanel();
+	document.getElementById("panel").innerHTML= document.getElementById("mainUserShow").innerHTML;
+}
+
+function ShowMsgInfo(){
+	modelPanel();
+	document.getElementById("panel").innerHTML= document.getElementById("mainMsgShow").innerHTML;
+}
+
+function ShowFaqsInfo(){
+	modelPanel();
+	document.getElementById("panel").innerHTML= document.getElementById("mainFaqsShow").innerHTML;
+}
+
+</script>
+
+
+
+</body>
+</html>

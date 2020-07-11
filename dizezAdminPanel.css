@@ -1,0 +1,83 @@
+
+.del{
+	padding-top:50px;
+	width: 50%;
+	margin: auto;
+
+}
+
+.del input{
+	border-radius: 5px;
+	border-color: #8080803b;
+	font-size: 20px;
+
+}
+.del button{
+	margin-left: 10px;
+	background: #0563af;
+	color: #000000;
+	width: 80px auto;
+	height: 40px;
+	border: 1px solid #000000;
+	font-size: 17px;
+	border-radius: 10px;
+	box-shadow: 0 5px 25px rgba(0,0,0,.5);
+	-webkit-appearance: button;
+
+}
+
+.dizez textarea{
+	border-radius: 5px;
+	border-color: #8080803b;
+	margin-left: 7%;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+.dizez button{
+	margin-left: 10px;
+	margin-bottom: 10px;
+	background: #0563af;
+	color: #000000;
+	width: auto;
+	height: 40px;
+	border: 1px solid #000000;
+	font-size: 17px;
+	border-radius: 10px;
+	box-shadow: 0 5px 25px rgba(0,0,0,.5);
+	-webkit-appearance: button;
+
+}
+
+.dizez{
+	padding-top:50px;
+	width: 50%;
+	margin: auto;
+
+}
+.detail {
+	border:2px solid;
+	border-radius: 15px;
+	padding-top: 10px;
+}
+.delForm{
+	border:2px solid;
+	border-radius: 15px;
+	padding: 10px;	
+}
+
+form.detail label{
+	font-size: 20px;
+	padding-left: 50px;
+	background: none;
+}
+form.delForm input{
+	width: 500px;
+	height: 30px;
+	margin-right: 20px;
+}
+
+#mainDizez{
+	display: none;
+}

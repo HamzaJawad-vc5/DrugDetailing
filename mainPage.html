@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Index page
+	</title>
+	<link rel="stylesheet" href="Guide.css">
+	<link rel="stylesheet" href="trending.css">
+
+<style type="text/css">
+		*{
+			background-color: #e7f3f5;
+		}
+		#headr{
+			display:inline-block;
+			width: 100%
+		}
+		#headName{
+			 display: inline-flex;
+			width: 50%;
+
+		}
+		#headDetails{
+			 width: 13%;
+			float: right;
+			padding-bottom: 8px;
+		}
+		.btnOut{
+			display: block;
+			margin:auto;
+			color: #fffde7;
+			width: 120px;
+			height: 30px;
+			border-radius: 10px;
+			background: #356b6b; 
+		}
+
+.body{
+	margin-bottom: 44px;
+}
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.5s;
+  width: 140px;
+  cursor: pointer;
+}
+
+.nav li a:not(.active){
+background-color: #333;
+}
+
+
+.nav li a:hover:not(.active) {
+  background-color: #111;
+  width: 160px;
+  
+  
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.heading{
+	font-weight: 600px;
+	text-align: center;
+	padding: 2%;
+}
+
+.srch{
+	padding-top:3%;
+	padding-bottom: 3%;
+	width: 50%;
+	margin: auto;
+
+}
+
+.srch input[type="text"]{
+	width: 500px;
+	height: 40px;
+	border-radius: 17px;
+	border-color: #8080803b;
+	margin-left: 7%;
+
+}
+.srch input[type="submit"]{
+	width: 80px;
+	height: 40px;
+	border-radius: 17px;
+	border-color: #295469d6;
+
+}
+
+.homeArticles{
+	background-color: #dfecefd1;
+	padding: 0%;
+	height:  auto;
+	width: 100%;
+	display: inline-block;
+	margin-top: 3%
+}
+.art{
+	padding-right: 5%; 
+	float: right;
+	background-color: #dfecefd1;
+	margin: auto;
+
+}
+.body{
+	margin-top: 1.5%;
+	
+	width: 100%;
+	height: 100%;
+
+}
+.newMeds{
+	display: none;
+}
+.med{
+	width: 98%;
+	height: 26%;
+	border-bottom: 2px solid grey;
+
+	margin: 1% 0% 1% .5%;
+	padding-bottom: .5%;
+	display: inline-flex;
+}
+
+.details-head{
+	width: 70%;
+}
+
+.details-body{
+	padding-left: 3.5%;
+	padding-right: 3.5%;
+}
+.details-body p{
+	margin: 0px;
+}
+.price{
+	margin-top: 8%;
+	padding-left: 8px;
+	border-left: 1px solid grey;
+
+}
+
+
+/*article section*/
+.article{
+	display: none;
+}
+
+.inside_article{
+	width: 80%;
+	margin-left: 12px;
+	display: inline-block;
+}
+.headOfArticle{
+	display: inline-flex;
+	width: 100%;
+	overflow-y: visible;
+}
+.headOfArticle h1{
+	width: 60%;
+}
+.headOfArticle img{
+	width:30%;
+	margin-left: auto;
+	overflow-y: visible;
+
+}
+.detailsOfArticle{
+
+	margin-left: 2%;
+	color: #666;
+}
+.detailsOfArticle p{
+	padding: 0px;
+	margin: 0px;
+}
+.mainAtricles{
+	
+}
+
+.moreArticles{
+	display: inline-block;
+	width: 18%;
+	height: auto;
+	margin-top: 13%;
+	padding-top: 0%;
+	padding-bottom: 7%;
+	border: 2px solid grey;
+	position: absolute;
+	margin-left: 1%;
+	border-radius: 6px;
+}
+
+
+/*compare medicine*/
+.compare{
+	/*background-color: transparent;*/
+	display: none;
+}
+.compare_bar{
+	margin-top: 4%;
+}
+.slct{
+  display: inline-block;
+  margin-left: 15%;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  color: #1a2023ed;
+  border-radius: 19px;
+  transition: 0.25s;
+  background: #499090a6;
+  font-family: Times New Roman;
+  font-style: bold;
+  font-size: 18;
+}
+
+.slct1{
+	font-style: bold;
+  font-size: 18;
+}
+.slct2{
+	margin-left: 35%;
+	
+}
+.btnComp{
+	display: block;
+	margin:auto;
+	width: 120px;
+	border-radius: 13px;
+	background: #356b6b; 
+}
+
+
+tr td h2{
+	background-color: transparent;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  background-color: transparent;
+  border: 2px solid #dddddd;
+  /*text-align: left;*/
+  padding: 8px;
+
+}
+th{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: #546e7a;
+}
+
+
+.comp_table{
+margin: 20px auto;
+width: 85%;
+}
+
+.nthRows{
+	background-color: #dddddd;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+  color: cadetblue;
+    font-size: 12px;
+}
+tr:nth-child(odd) {
+	font-family: Georgia;
+    text-align: center;
+}
+
+.tt{
+	display: none;
+}
+.gg{
+	display: none;
+}
+
+</style>
+</head>
+<body>
+<header>
+	<div id="headr">
+
+   
+	<div id="headName" onclick="location.href='';" style="cursor: pointer;">
+	<img src="newDrug4.png" width="11%" height="11%" style="margin : .5%">
+	<h1>Drug Detailing</h1>
+	</div>		
+	
+	<div id="headDetails">	
+	<img src="login-png.png" width="30%" style="margin:0% 0% 0% 30%;vertical-align: bottom;">
+	<p style="margin-left: 20%;margin-top: 0%;margin-bottom: 0px; font-weight: bold; font-style: underline;">Hamza Jawad</p>
+	<a href="index.html"><button class="btnOut" >Logout</button></a> 
+	</div>
+
+
+	</div>
+
+	<br>
+
+	<div class="nav">
+		<ul>
+
+  			<li><a  onclick="newMed();">New Launched</a></li>
+  			<li><a  onclick="article();">Read Articles</a></li>
+  			<li><a  onclick="comp();">Compare Medicines</a></li>
+  			<li><a  onclick="trendingDidease();">Trending Diseases</a></li>
+  			<li><a  onclick="GGuide()">Guide</a></li>
+  			<li style="float:right"><a class="active" href="mainPage.html">Home</a></li>
+		</ul>
+	</div>
+</header>
+
+
+
+
+<div class="body" id="yo">
+
+	<div class="srch">
+	<div class="heading">
+		<h1>Find Drugs By Name</h1>
+
+	</div>
+
+	<form>
+		<input id="box" type="text" name="" placeholder="eg. Paracetamol">
+		<input type="submit" name="" placeholder="Search">
+	</form>
+	</div>
+
+
+
+	<div class="homeArticles">
+		<div class="art">
+			<div style="background-color: white; height: 340px; overflow-y: hidden;">
+				<img src="article1.PNG" height="170px" width="350px" onclick="article()">
+			<h3 style="width:320px; padding-left: 6%; color:#5a5869; background-color: transparent;">American Health Packaging issues Voluntary Nationwide Recall of Ranitidine Tablets</h3>
+			</div>
+		</div>
+
+		<div class="art">
+			<div style="background-color: white; height: 340px; overflow-y: hidden;">
+			<img src="article2.PNG" height="170px" width="350px" onclick="article()">
+			<h3 style="width:320px; padding-left: 6%; color:#5a5869; background-color: transparent;">FDA Approves Advil Dual Action (ibuprofen and acetaminophen) as an Over-the-Counter pain treatment</h3>
+			</div>
+		</div>
+
+		<div class="art">
+			<div style="background-color: white; height: 340px; overflow-y: hidden;">
+			<img src="article3.PNG" height="170px" width="350px" onclick="article()">
+			<h3 style="width:320px; padding-left: 6%; color:#5a5869; background-color: transparent;">US has announced more travel Restrictions as the first crona virus death Report</h3>
+			</div>
+		</div>
+	
+	</div>
+
+</div>
+
+
+ <div class="newMeds" id="newMed">
+ 	<div class="med" id="med">
+ 		<img src="" height="23%" width="23%" style="align-self: flex-end; box-shadow: 5px 5px 5px grey;">
+ 		<div class="details-head" id="details">
+ 			<h1 id="heading" style="text-align: center;"></h1>
+ 			<div class="details-body">
+ 			 <p id="cmpny"></p>
+ 			 <p id="mg"></p>
+ 			 <p id="formula"></p>
+ 			 <p id="purpose"></p>
+ 			 <p id="ListDetail"></p>
+ 			</div>
+ 		</div>
+ 		<div class="price" style="align-self: center; text-align: center;">
+ 			<h3>Price: </h3>
+ 			<h4 id="price" style="font-size: 30;"> </h4>
+ 		</div>
+
+ 	</div>
+ </div>
+
+<!-- article Html code-->
+
+ <div class="article" id="article">
+ 	<div class="mainAtricles">
+ 	<div class="inside_article" id="inside_article">
+
+ 		<div class="headOfArticle">
+
+ 			<h1>Effects of Allopurinol on the Progression of Chronic Kidney Disease </h1>
+ 			<img src="drugs1.jpg" >
+ 			
+ 		</div>
+
+ 		<div class="detailsOfArticle">
+ 			
+ 			<p id="dateOfPublish">Date of Publish: </p> 
+ 			<p id="PublishBy">Published By: </p>
+ 			<p id="sources">Sources: </p>
+ 			<p id="No_OfArticlesPublished">Total Articles Published: </p>
+
+
+ 		</div>
+
+ 		<div class="bodyArticle">
+ 			
+ 			<p id="abstract"></p>
+
+ 			<p id="background">BACKGROUND
+				Elevated serum urate levels are associated with progression of chronic kidney disease. Whether urate-lowering treatment with allopurinol can attenuate the decline of the estimated glomerular filtration rate (eGFR) in patients with chronic kidney disease who are at risk for progression is not known.</p>
+ 			<p id="Introduction"></p>
+ 			<p id="Body">METHODS
+				In this randomized, controlled trial, we randomly assigned adults with stage 3 or 4 chronic kidney disease and no history of gout who had a urinary albumin:creatinine ratio of 265 or higher (with albumin measured in milligrams and creatinine in grams) or an eGFR decrease of at least 3.0 ml per minute per 1.73 m2 of body-surface area in the preceding year to receive allopurinol (100 to 300 mg daily) or placebo. The primary outcome was the change in eGFR from randomization to week 104, calculated with the Chronic Kidney Disease Epidemiology Collaboration creatinine equation.</p>
+ 			<p id="Discussion">RESULTS
+				Enrollment was stopped because of slow recruitment after 369 of 620 intended patients were randomly assigned to receive allopurinol (185 patients) or placebo (184 patients). Three patients per group withdrew immediately after randomization. The remaining 363 patients (mean eGFR, 31.7 ml per minute per 1.73 m2; median urine albumin:creatinine ratio, 716.9; mean serum urate level, 8.2 mg per deciliter) were included in the assessment of the primary outcome. The change in eGFR did not differ significantly between the allopurinol group and the placebo group (−3.33 ml per minute per 1.73 m2 per year [95% confidence interval {CI}, −4.11 to −2.55] and −3.23 ml per minute per 1.73 m2 per year [95% CI, −3.98 to −2.47], respectively; mean difference, −0.10 ml per minute per 1.73 m2 per year [95% CI, −1.18 to 0.97]; P=0.85). Serious adverse events were reported in 84 of 182 patients (46%) in the allopurinol group and in 79 of 181 patients (44%) in the placebo group.</p>
+ 			<p id="Conclusion">CONCLUSIONS
+				In patients with chronic kidney disease and a high risk of progression, urate-lowering treatment with allopurinol did not slow the decline in eGFR as compared with placebo. (Funded by the National Health and Medical Research Council of Australia and the Health Research Council of New Zealand; CKD-FIX Australian New Zealand Clinical Trials Registry number, ACTRN12611000791932. opens in new tab.)</p>
+ 			<p id="Recommendations"></p>
+ 			<p id="Appendices"></p>
+
+ 		</div>
+
+ 
+
+ 		
+ 	</div>
+
+ 	<div class="moreArticles">
+ 		<h3 style="text-align: center; ">More Articles</h3>
+ 		<div style="margin: 0px 5px 5px 12px; font-style: italic;">
+ 			<h3 style="margin-bottom: 0;">This is An other article.</h3>
+ 			<span>This is small description about this article</span>
+ 			
+ 			<h3 style="margin-bottom: 0;">This is An other article.</h3>
+ 			<span>This is small description about this article</span>
+
+ 			<h3 style="margin-bottom: 0;">This is An other article.</h3>
+ 			<span>This is small description about this article</span>
+
+ 		</div>
+ 	</div>
+
+ </div>
+ 	
+ </div>
+
+
+<!-- compare medicine-->
+
+<div class="compare" id="compare">
+
+	<div class="inside_compare">
+
+		<div class="compare_bar">
+			<select class="slct slct1" style="font-size: 17px;">
+				<option value="med1">Medicine 1</option>
+				<option value="med2">Medicine 2</option>
+				<option value="med3">Medicine 3</option>
+				<option value="med4">Medicine 4</option>
+				<option value="med5">Medicine 5</option>
+			</select>
+			<select class="slct slct2" style="font-size: 17px;">
+				<option value="med1">Medicine 1</option>
+				<option value="med2">Medicine 2</option>
+				<option value="med3">Medicine 3</option>
+				<option value="med4">Medicine 4</option>
+				<option value="med5">Medicine 5</option>
+			</select>
+			<button class="slct btnComp" style="font-size: 15px; font-family: Verdana; font-weight: bold;">Compare</button>
+		</div>
+
+		<div class="comapre_body">
+
+			<table class="comp_table">
+				<thead class="headMed">
+
+					<tr class="headtable">
+						<th  id="head1" "><h1 style="text-align: left; background-color: transparent;">Name Medicine <h1></th>
+						<th  id="head2" "><h1 style="text-align: left; background-color: transparent;">Name Medicine <h1></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr class="descrpt">
+						<td id="descrp1"> <p>I was so glad to see these posts. Pharmacies are so rude to me. I switched to so many brands, but they say they are all alike, and say</p></td>
+						<td id="descrp2"><p>A total life changer! I have become much happier and much more motivated in life. I have always had trouble paying attention, would drift off, daydream, get stuck in my</p></td>
+					</tr>
+
+					<tr class="">
+						<td colspan="2">
+							<h2 class="clr" style="margin-bottom: 0px;">Rating:</h2>
+							<p style="color: grey;background-color: transparent;margin-top: 0px;">Rated by Experts</p>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="rat1"><h1>4.7</h1></td>
+						<td id="rat2"><h1>4.9</h1></td>
+					</tr>
+
+
+					<tr class="" >
+						<td colspan="2">
+							<h2>Drug Class</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="class1"><p>CNS stimulants</p></td>
+						<td id="class2"><p>CNS stimulants</p></td>
+					</tr>
+
+					<tr class="">
+						<td colspan="2">
+							<h2>Purpose</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="dos1"><p>It is used to cure ___ disease</p></td>
+						<td id="dos2"><p>It is used to cure ___ disease</p></td>
+					</tr>
+					
+
+					<tr class="">
+						<td colspan="2">
+							<h2>Side Effects</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="rat1"><p>nothing</p></td>
+						<td id="rat2"><p>Common side effects include: insomnia, and irritability.</p></td>
+					</tr>
+
+					<tr class="">
+						<td colspan="2">
+							<h2 style="margin-bottom: 0px;">Price:</h2>
+							<p style="color: grey;background-color: transparent;margin-top: 0px;">Prices are without Tax</p>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="price1"><p>$34</p></td>
+						<td id="price2"><p>$78</p></td>
+					</tr>
+
+
+					<tr class="">
+						<td colspan="2">
+							<h2>Dosage</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="dos1"><p>400mg</p></td>
+						<td id="dos2"><p>1000mg</p></td>
+					</tr>
+
+					<tr class="">
+						<td colspan="2">
+							<h2>Formula</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="dos1"><p>Formula For med 1</p></td>
+						<td id="dos2"><p>Formula For med 1</p></td>
+					</tr>
+
+
+					<tr class="">
+						<td colspan="2">
+							<h2>Quantity</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="qty1"><p>20 Tablets</p></td>
+						<td id="qty2"><p>50 Tablets</p></td>
+					</tr>
+
+					<tr class="">
+						<td colspan="2">
+							<h2>Brands</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="brnd1"><p>Mydayis</p></td>
+						<td id="brnd2"><p>Adderall XR</p></td>
+					</tr>
+
+
+					<tr class="">
+						<td colspan="2">
+							<h2 style="margin-bottom: 0px;">Half life</h2>
+							<p style="color: grey;background-color: transparent;margin-top: 0px;">The half-life of a drug is the time taken for the plasma concentration of a drug to reduce to half its original value.</p>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="life1"><p>34 hours</p></td>
+						<td id="life2"><p>1hours</p></td>
+					</tr>
+
+
+					<tr class="">
+						<td colspan="2">
+							<h2>First Approval Date</h2>
+						</td>
+					</tr>
+
+					<tr class="">
+						<td id="life1"><p>January 19, 1960</p></td>
+						<td id="life2"><p>February 23, 2007</p></td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+			
+		</div>
+		
+	</div>
+
+<!-- trending start-->
+	<div class="tt" id="tt">
+		<div>
+	<p class="start">
+		A disease is a particular abnormal condition that negatively affects the structure or function of all or part of an organism, and that is not due to any immediate external injury. Diseases are often known to be medical conditions that are associated with specific symptoms and signs.
+		<br>
+		There are number of diseases whom are destroying entire world polulation and becoming trending on the basis of death ratio.
+	</p>
+</div>
+<div class="trend">
+
+		<div class="title">
+				<div class="desc">
+						<div class="container">
+							  <img src="covid.jpg" alt="Snow" style="width:100%;">
+							  <div class="covid">COVID-19</div>
+						</div>
+				<div class="d">Description</div>
+
+					<p>Coronaviruses COVID-19 (CoV) are a large family of viruses that cause illness ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV). A novel coronavirus (nCoV) is a new strain that has not been previously identified in humans.Coronaviruses are zoonotic, meaning they are transmitted between animals and people. Detailed investigations found that SARS-CoV was transmitted from civet cats to humans and MERS-CoV from dromedary camels to humans. Several known coronaviruses are circulating in animals that have not yet infected humans. The new coronavirus is a respiratory virus which spreads primarily through droplets generated when an infected person coughs or sneezes, or through droplets of saliva or discharge from the nose. To protect yourself, clean your hands frequently with an alcohol-based hand rub or wash them with soap and water.
+					</p>
+				</div>
+		</div>
+<div class="vl"></div>
+
+		<div class="pre">
+			<div class="s">Symptoms</div>
+				<p>
+					People infected with COVID-19 may experience any range of these symptoms along with aches and pains, nasal congestion, runny nose, sore throat and diarrhea. Symptoms can start to show up anywhere from two to 14 days after exposure to the virus. It may be possible for an infected person who is not yet showing any symptoms to spread the virus. Older persons, and those with pre-existing medical illnesses like heart disease and diabetes, however, seem to be more likely to experience severe respiratory symptoms and complications.
+				</p>
+				<div class="cautions">Precautions</div>
+				<p>
+					Avoid sharing personal household items, such as dishes, drinking glasses, cups, eating utensils, towels or bedding. Wash items thoroughly after using them with soap and hot water.On your own, clean and disinfect high-touch surfaces daily in your sick room and designated bathroom. Have a healthy household member do the same for surfaces in other parts of the home. If you are sharing a bathroom, clean and disinfect it after each use.
+				</p>
+		</div>
+</div>	
+
+<hr>
+
+<div class="trend">
+
+		<div class="title">
+				<div class="desc">
+						<div class="container">
+							  <img src="mala.jpg" alt="Snow" style="width:100%; height: 255px;">
+							  <div class="covid">MALARIA</div>
+						</div>
+				<div class="d">Description</div>
+
+					<p>Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain type of mosquito which feeds on humans. People who get malaria are typically very sick with high fevers, shaking chills, and flu-like illness. Malaria is not caused by a virus or bacteria. Malaria is caused by a parasite known as Plasmodium, which is normally spread through infected mosquitoes. A mosquito takes a blood meal from an infected human, taking in Plasmodia which are in the blood. P. falciparum is the type of malaria that is most likely to result in severe infections and if not promptly treated, may lead to death. Although malaria can be a deadly disease, illness and death from malaria can usually be prevented. About 2,000 cases of malaria are diagnosed in the United States each year.The vast majority of cases in the United States are in travelers and immigrants returning from parts of the world where malaria transmission occurs, including sub-Saharan Africa and South Asia.
+					</p>
+				</div>
+		</div>
+<div class="vl"></div>
+
+		<div class="pre">
+			<div class="s">Symptoms</div>
+				<p>
+					A malaria infection is generally characterized by the following signs and symptoms which includes Fever, Chills, Headache, Nausea, Muscle pain, sweating and Cough. Some people who have malaria experience cycles of malaria "attacks." An attack usually starts with shivering and chills, followed by sweating and a return to normal temperature. Malaria signs and symptoms typically begin within a few weeks after being bitten by an infected mosquito. However, some types of malaria parasites can lie dormant in your body for up to a year. 
+				</p>
+				<div class="cautions">Precautions</div>
+				<p>
+					Protect yourself day and night, because different mosquitoes feed at different times.Wear long-sleeved shirts, pants, and a hat to minimize exposed skin. Spray or wash clothing, bedding, and bed netting with permethrin, which can be purchased in camping stores and the UHS Pharmacy.Stay and sleep in screened-in or air-conditioned rooms.
+				</p>
+		</div>
+</div>	
+
+<hr>
+
+<div class="trend">
+
+		<div class="title">
+				<div class="desc">
+						<div class="container">
+							  <img src="di.jpg" alt="Snow" style="width:100%; height: 255px;">
+							  <div class="covid">DIABETES</div>
+						</div>
+				<div class="d">Description</div>
+
+					<p>Diabetes is a disease in which your blood glucose, or blood sugar, levels are too high. Glucose comes from the foods you eat. Insulin is a hormone that helps the glucose get into your cells to give them energy. With type 1 diabetes, your body does not make insulin. With type 2 diabetes, the more common type, your body does not make or use insulin well. Without enough insulin, the glucose stays in your blood. You can also have prediabetes. This means that your blood sugar is higher than normal but not high enough to be called diabetes. Having prediabetes puts you at a higher risk of getting type 2 diabetes.Over time, having too much glucose in your blood can cause serious problems. It can damage your eyes, kidneys, and nerves. Diabetes can also cause heart disease, stroke and even the need to remove a limb. Pregnant women can also get diabetes, called gestational diabetes.
+					</p>
+				</div>
+		</div>
+<div class="vl"></div>
+
+		<div class="pre">
+			<div class="s">Symptoms</div>
+				<p>
+					Symptoms of Diabetes:
+					<ul>
+			  			<li>Urinating often</li>
+			  			<li>Feeling very thirsty</li>
+			  			<li>Extreme fatigue</li>
+			  			<li>Blurry vision</li>
+			  			<li>Weight loss</li>
+			  			<li>numbness in the hands</li>
+					</ul>
+				</p>
+				<div class="cautions">Precautions</div>
+				<p>
+					Type 1 diabetes isn’t preventable because it’s caused by a problem with the immune system. Some causes of type 2 diabetes, such as your genes or age, aren’t under your control either.Yet many other diabetes risk factors are controllable.
+					<ul>
+			  			<li>Get at least 150 minutes per week of aerobic exercise, such as walking or cycling.</li>
+			  			<li>Cut saturated and trans fats, along with refined carbohydrates, out of your diet.</li>
+			  			<li>Eat more fruits, vegetables, and whole grains.</li>
+					</ul>
+
+				</p>
+		</div>
+</div>	
+
+</div> <!-- tt , trending end -->
+
+
+
+<!-- guide start -->
+
+	<div class="gg" id="gg">
+		<div>
+	<p class="para">
+		A general surgeon is a specialist who is trained to diagnose, treat, and manage patients with a broad spectrum of surgical conditions affecting almost any area of the body. The surgeon establishes the diagnosis and provides the preoperative, operative, and postoperative care to patients and is often responsible for the comprehensive management of the trauma victim and the critically ill patient.	
+	</p>
+	<p class="para">
+		Here We have 3 major types of surgeons We may choose any of them to get priscribtion and medication guide for you or a patient suffering of any specific disease.
+	</p>
+	<div class="box">
+		<select>
+			<option>Choose a Doctor</option>
+			<option>Neurologist</option>
+			<option>Allergist</option>
+			<option>Psychiatrist</option>
+		</select>
+		</div>
+	<div>
+		<div class="msg">
+			<form>
+			<input id="box" type="text" name="" placeholder="Write a message">
+			<button onclick="GGuide();">Send</button>
+			t<!-- he purpose of onclick is to keep it on same page after click -->
+			</form>
+		</div>
+
+	</div>
+</div>
+
+<div class="faqs">
+	<h1>FAQs</h1>
+	<div class="pa1">
+		<p>
+			What is your philosophy towards medical care?
+		</p>
+		<p>
+			Our Medical was founded on a better model of care – one designed around patients’ needs that provides a higher level of quality and service affordably. We do this through innovative design, excellent customer service, and the efficient use of technology.
+		</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		Does your Medical offer urgent care?
+	</p>
+	<p>
+		Our primary care providers can address a wide range of urgent and acute concerns. Because we offer same-day appointment availability and 24/7 access to our clinical team, we are a great option for urgent needs.
+	</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		What is primary care?
+	</p>
+	<p>
+		The term primary care refers to the kind of medical care you need first — before you get sick, before you need to see a specialist, before you need to go to a hospital. With an emphasis on family practice and internal medicine, as your primary care providers we at One Medical will address your essential health needs by:
+<br>
+		Focusing on prevention and screening
+<br>
+		Working closely with you to plan for your health
+	</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		What should I expect from my primary care team at your Medical?
+	</p>
+	<p>
+		We believe primary care should be the first stop in your healthcare journey; it’s where you turn for guidance and support before you get sick, before you see a specialist, and before you need to seek hospital care. Our providers combine excellent customer service with an efficient use of technology to deliver high-quality, affordable service that’s designed to fit your unique needs.
+	</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		How is your Medical different from other practices?
+	</p>
+	<p>
+		Our philosophy is rooted in quality care, patient-centered design, and a smart application of technology. In order to deliver the best preventive medicine, acute care, and chronic condition management, we provide our board-certified medical professionals the time and tools to make the best decisions for your health.
+	</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		Does One Medical offer flu shots?
+	</p>
+	<p>
+		Yes! During flu season, we offer flu shots on a walk-in basis, while supplies last. The vaccine is covered by most insurance plans. Alternatively, if you prefer not to bill insurance, the out-of-pocket cost is $45 for a regular vaccine and $75 for high-dose. Please check with your insurance provider if you have questions concerning your coverage.
+	</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		Prescriptions and Prescription Renewals at One Medical?
+	</p>
+	<p>
+		We make it easy to request and renew prescriptions. When you come in for an appointment, your provider will assess your proper course of treatment. If a prescription is required, we can send a prescription electronically to the pharmacy of your choice for you to pick up there.
+	</p>
+	</div>
+
+	<div class="pa1">
+	<p>
+		What is a controlled substance?
+	</p>
+	<p>
+		A controlled substance is a medication that’s regulated by the government because of its high potential for harm or abuse. However, it’s still possible to take these medications safely for health reasons under the care of your clinical team. You should work with your provider to figure out a care plan that works for you and that you’re comfortable with.
+	</p>
+	</div>
+</div>
+
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+ function newMed(){
+ 
+		  // document.getElementsById("body")[0].replaceChild(extern.getElementsById("body")[0], document.getElementsById("body")[0]);
+	var obj=[
+		{
+			path:"drugs1.jpg",
+			heading: "Name of Medicine",
+			company: "Name Of all Brands",
+			weight: "50mg",
+			formula: "Formula",
+			purpose: "Purpose",
+			price: "$90",
+			detail:"I was so glad to see these posts. Pharmacies are so rude to me. I switched to so many brands, but they say they are all alike, and say"
+
+		},
+		{
+			path:"drugs1.jpg",
+			heading: "Name of Medicine",
+			company: "Name Of all Brands",
+			weight: "50mg",
+			formula: "Formula",
+			purpose: "Purpose",
+			price: "$90",
+			detail:"A total life changer! I have become much happier and much more motivated in life. I have always had trouble paying attention, would drift off, daydream, get stuck in my"
+		}
+	];
+
+		  document.getElementById("yo").innerHTML="";
+		//  var y = document.getElementById("newMed").;
+		  for(var key0 in obj) {
+		  	
+		  	//document.write(obj.0.heading);
+		  		document.getElementById("med").childNodes[1].src=obj[key0]["path"];
+
+		  		document.getElementById("heading").innerHTML=  obj[key0]["heading"];
+		  		document.getElementById("cmpny").innerHTML=obj[key0]["company"];
+		  		document.getElementById("mg").innerHTML=obj[key0]["weight"];
+		  		document.getElementById("formula").innerHTML=obj[key0]["formula"];
+		  		document.getElementById("purpose").innerHTML=obj[key0]["purpose"];
+		  		document.getElementById("price").innerHTML=obj[key0]["price"];
+		  		document.getElementById("ListDetail").innerHTML=obj[key0]["detail"];
+
+		  		// y.[0].h1="heading 1"
+		  		// y.[0].p = "znncjksdnjckcjnsjbjcvhkcjcnsdchscnl";
+		  		  document.getElementById("yo").innerHTML+= document.getElementById("newMed").innerHTML;
+			}
+		 
+	}
+
+	function article(){
+		document.getElementById("yo").innerHTML="";
+		document.getElementById("yo").innerHTML+= document.getElementById("article").innerHTML;
+	}
+
+	function comp(){
+		document.getElementById("yo").innerHTML="";
+		document.getElementById("yo").innerHTML+= document.getElementById("compare").innerHTML;
+	}
+
+	function trendingDidease(){
+		document.getElementById("yo").innerHTML="";
+		document.getElementById("yo").innerHTML+= document.getElementById("tt").innerHTML;
+	}
+
+	function GGuide(){
+		document.getElementById("yo").innerHTML="";
+		document.getElementById("yo").innerHTML+= document.getElementById("gg").innerHTML;
+	}
+	
+</script>
+
+
+
+
+<footer style="bottom: 0; position: fixed; width: 100%; height: 35px; ">
+	<p >@All CopyRights© are reserved since 1960-2050</p>
+
+</footer>
+
+
+</body>
+</html>
+
